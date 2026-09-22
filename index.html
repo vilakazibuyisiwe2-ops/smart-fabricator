@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fabricator Pro | Cone Layout & Structural Calculator</title>
+    <!-- Link to external tech stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Main Navigation / Tech Header -->
+    <header class="tech-header">
+        <div class="logo-container">
+            <span class="logo-icon">⚡</span>
+            <h1>SmartFabricator<span class="accent-text">.Pro</span></h1>
+        </div>
+        <p class="tagline">Industrial Math Made Simple for Modern Tradespeople</p>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- CALCULATOR SECTION -->
+        <section class="calculator-card">
+            <h2>Concentric Cone Flat Pattern Calculator</h2>
+            <p class="instruction-text">Enter your dimensions below to generate exact marking dimensions instantly.</p>
+            
+            <form id="coneForm" onsubmit="event.preventDefault();">
+                <div class="input-group">
+                    <label for="largeDia">Large End Diameter (D):</label>
+                    <input type="number" id="largeDia" step="0.1" placeholder="e.g., 500" required>
+                    <span class="unit-label">mm</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="smallDia">Small End Diameter (d):</label>
+                    <input type="number" id="smallDia" step="0.1" placeholder="e.g., 250" required>
+                    <span class="unit-label">mm</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="coneHeight">Vertical Height (H):</label>
+                    <input type="number" id="coneHeight" step="0.1" placeholder="e.g., 400" required>
+                    <span class="unit-label">mm</span>
+                </div>
+
+                <button type="button" class="btn-calculate" onclick="calculateConePattern()">Generate Layout Pattern</button>
+            </form>
+
+            <!-- Results Output Area -->
+            <div id="resultsArea" class="results-card hidden">
+                <h3>📐 Your Layout Dimensions</h3>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Outer Sweep Radius (R1):</span>
+                        <span id="outRadius" class="result-value">0.0</span><span class="unit">mm</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Inner Cutout Radius (R2):</span>
+                        <span id="inRadius" class="result-value">0.0</span><span class="unit">mm</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Pattern Sector Angle (θ):</span>
+                        <span id="patternAngle" class="result-value">0.0</span><span class="unit">°</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Check Cord Measurement:</span>
+                        <span id="checkCord" class="result-value">0.0</span><span class="unit">mm</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MONETIZED TIPS SECTION: BOILERMAKING MADE EASIER -->
+        <section class="tips-container">
+            <h2>🛠️ Boilermaking Made Easier</h2>
+            <p class="section-intro">Pro workshop tips to avoid wasting steel and layout errors.</p>
+
+            <div class="tips-grid">
+                <!-- Tip 1 (Affiliate Hook) -->
+                <div class="tip-card">
+                    <h3>1. The Material Thickness Allowance</h3>
+                    <p>When rolling thick boilerplate (e.g., 6mm to 12mm+), tracking your outside diameter will result in a cone that is too small. Always subtract one material thickness from your target diameter before entering figures above to use the <strong>Mean Diameter</strong>.</p>
+                    <a href="https://amzn.to" target="_blank" class="affiliate-link">🔧 Upgrade toolset: Get shop-ready Digital Calipers</a>
+                </div>
+
+                <!-- Tip 2 (Affiliate Hook) -->
+                <div class="tip-card">
+                    <h3>2. Marking Arc Lines without Slipping</h3>
+                    <p>A fraction of a millimeter off at the center point results in centimeters of error at the outer rim. Lock your layout down securely before drawing your sweep paths.</p>
+                    <a href="https://amzn.to" target="_blank" class="affiliate-link">📐 Get Heavy-Duty Lockable Trammel Points</a>
+                </div>
+
+                <!-- Tip 3 (Affiliate Hook) -->
+                <div class="tip-card">
+                    <h3>3. Test-Prep & Blueprint Domination</h3>
+                    <p>Mastering development layouts by hand is mandatory to clear trade validation exams and advance your career past standard workshop floor hourly rates.</p>
+                    <a href="https://alison.com" target="_blank" class="affiliate-link">🎓 Prepare for Exams: Free Technical Drawing Courses</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="tech-footer">
+        <p>&copy; 2026 SmartFabricator.Pro. Built for the modern structural workshop.</p>
+    </footer>
+
+    <!-- Link to external un-muddled JavaScript calculation engine -->
+    <script href="script.js" src="script.js"></script>
+</body>
+</html>
